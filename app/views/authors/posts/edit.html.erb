@@ -1,7 +1,7 @@
-<%= link_to 'Back', posts_path, class: "btn btn-secondary mb-3" %>
 
 <div class="row">
   <div class="col-md-3">
+<%= link_to 'Back', posts_path, class: "btn btn-secondary mb-3" %>
     <div class="card">
       <div class="card-body">
         <div class="card-title">
@@ -10,6 +10,12 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="col-md-9">
+    <%= form_with(model: [@post, @paragraph]) do |f| %>
+      <%= f.hidden_field :element_type, value: 'paragraph' %>
+      <%= f.submit "Paragraph", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 

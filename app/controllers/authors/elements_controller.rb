@@ -16,11 +16,8 @@ module Authors
     end
 
     def update
-      if @element.update(element_params)
-        redirect_to @element, notice: 'Element was successfully updated.'
-      else
-        render :edit
-      end
+      @element.update(element_params)
+      redirect_to edit_post_path(@element.post)
     end
 
     def destroy
